@@ -3,7 +3,7 @@
 
   outputs = { self, nixpkgs }: {
 
-    nixosConfigurations.container = nixpkgs.lib.nixosSystem {
+    defaultPackage.x86_64-linux = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules =
         [ ({ pkgs, ... }: {
