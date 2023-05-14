@@ -10,7 +10,7 @@
 
   # add the inputs declared above to the argument attribute set
   outputs = { home-manager, nixpkgs, ... }: {
-    packages.x86_64-linux  = {
+    packages.x86_64-linux.default  = {
     # you can have multiple darwinConfigurations per flake, one per hostname
         system = "x86_64-linux";
 
