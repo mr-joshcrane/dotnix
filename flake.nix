@@ -9,7 +9,7 @@
   };
 
   outputs = { home-manager, nixpkgs, ... }: {
-    homeManagerConfigurations.joshcrane = home-manager.lib.homeManagerConfiguration {
+    packages.x86_64-linux.default = home-manager.lib.homeManagerConfiguration {
       configuration = { pkgs, ... }: {
         home.packages = with pkgs; [
           htop
