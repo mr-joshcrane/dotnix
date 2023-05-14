@@ -8,32 +8,19 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  # add the inputs declared above to the argument attribute set
   outputs = { home-manager, nixpkgs, ... }: {
-    packages.x86_64-linux.default  = {
-    # you can have multiple darwinConfigurations per flake, one per hostname
-        system = "x86_64-linux";
-
-        modules = [
-            home-manager.darwinModules.home-manager
-            {
-                services.nix-daemon.enable = true;
-                programs.zsh.enable = true;
-                security.pam.enableSudoTouchIdAuth = true;
-                users.users = {
-                  "joshcrane" = {
-                    name = "joshcrane";
-                    home = "/home/joshcrane";
-                  };
-                };
-                home-manager = {
-                    useGlobalPkgs = true;
-                    useUserPackages = true;
-
-                    users."joshcrane" = import ./home.nix;
-                };
-            }
-        ]; # will be important later
+    homeManagerConfigurations.joshcrane = home-manager.lib.homeManagerConfiguration {
+      configuration = { pkgs, ... }: {
+        home.packages = with pkgs; [
+          htop
+          neovim
+          curl
+          git
+        ];
+      };
+      system = "x86_64-linux";
+      homeDirectory = "/home/joshcrane";
+      username = "joshcrane";
     };
   };
 }
