@@ -12,9 +12,8 @@
             # Let 'nixos-version --json' know about the Git revision
             # of this flake.
             system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
-
-        ];
-    };
-
-  };
+        })
+      ]
+    }
+  }
 }
