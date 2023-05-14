@@ -10,8 +10,8 @@
 
   outputs = { home-manager, nixpkgs, ... }: {
     packages.x86_64-linux.default = home-manager.lib.homeManagerConfiguration {
-      configuration = { pkgs, ... }: {
-        home.packages = with pkgs; [
+      configuration = { nixpkgs, ... }: {
+        home.packages = with nixpkgs; [
           htop
           neovim
           curl
