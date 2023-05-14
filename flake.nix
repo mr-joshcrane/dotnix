@@ -13,7 +13,7 @@
             # of this flake.
             system.configurationRevision = nixpkgs.lib.mkIf (self ? rev) self.rev;
         })
-      ]
-    }
-  }
+      ];
+    };
+  };
 }
