@@ -57,11 +57,7 @@
   programs.zsh = import ./programs/zsh.nix {
     inherit pkgs;
   };
-
-  programs.git = import ./programs/git.nix {
-    inherit pkgs;
-  };
-
+  
   programs.neovim = import ./programs/neovim.nix {
     inherit pkgs;
   };
