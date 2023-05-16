@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  home.username = "jcrane";
+  home.homeDirectory = "/home/jcrane";
   home.stateVersion = "22.05";
   home.packages = with pkgs; [
     tmux
@@ -41,24 +43,23 @@
 
   programs.home-manager.enable = true;
 
-  # programs.direnv = {
-  #   enable = true;
-  #   nix-direnv.enable = true;
-  # };
+   programs.direnv = {
+     enable = true;
+     nix-direnv.enable = true;
+   };
+   programs.tmux = import ./programs/tmux.nix {
+     inherit pkgs;
+   };
 
-  # programs.tmux = import ./programs/tmux.nix {
-  #   inherit pkgs;
-  # };
+   programs.alacritty = import ./programs/alacritty.nix {
+     inherit pkgs;
+   };
 
-  # programs.alacritty = import ./programs/alacritty.nix {
-  #   inherit pkgs;
-  # };
-
-  # programs.zsh = import ./programs/zsh.nix {
-  #   inherit pkgs;
-  # };
+   programs.zsh = import ./programs/zsh.nix {
+     inherit pkgs;
+   };
   
-  # programs.neovim = import ./programs/neovim.nix {
-  #   inherit pkgs;
-  # };
+   programs.neovim = import ./programs/neovim.nix {
+     inherit pkgs;
+   };
 }
