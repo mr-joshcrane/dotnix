@@ -11,11 +11,9 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = nixpkgs.legacyPackages.${system};
         system = "x86_64-linux";
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
@@ -25,7 +23,7 @@
         # to pass through arguments to home.nix
       };
       homeConfigurations.jc = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = nixpkgs.legacyPackages.${system};
         system = "aarch64-linux";
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
