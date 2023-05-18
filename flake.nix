@@ -12,7 +12,7 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     in {
-      homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
+      packages.${system}.homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         system = "x86_64-linux";
         # Specify your home configuration modules here, for example,
@@ -22,7 +22,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      homeConfigurations.jc = home-manager.lib.homeManagerConfiguration {
+      packages.${system}.homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         system = "aarch64-linux";
         # Specify your home configuration modules here, for example,
