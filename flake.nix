@@ -11,7 +11,7 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }:
-    in {
+    {
       homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         system = "${system}";
