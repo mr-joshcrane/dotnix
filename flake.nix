@@ -13,8 +13,6 @@
   outputs = { nixpkgs, home-manager, ... }:
     {
       homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        system = "aarch64-linux";
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
