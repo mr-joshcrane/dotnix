@@ -14,7 +14,7 @@
     {
       homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        system = "${system}";
+        system = "aarch64-linux";
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
