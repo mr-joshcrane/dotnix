@@ -24,7 +24,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      homeConfigurations.jcrane@mac = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.jc = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         system = "aarch64-linux";
         # Specify your home configuration modules here, for example,
