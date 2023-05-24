@@ -1,9 +1,11 @@
 { pkgs, ... }:
 
 let
-  script = pkgs.writeShellScriptBin "setup-tmux-plugins" ''
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    ~/.tmux/plugins/tpm/bin/install_plugins
+  script = pkgs.writeScript "setup-tmux-plugins" ''
+    if [ ! -d "${builtins.getEnv "HOME"}/.tmux/plugins/tpm" ]; then
+      git clone https://github.com/tmux-plugins/tpm ${builtins.getEnv "HOME"}/.tmux/plugins/tpm
+      ${builtins.getEnv "HOME"}/.tmux/plugins/tpm/bin/install_plugins
+    fi
   '';
 in
 {
@@ -17,7 +19,7 @@ in
     ];
 
     extraConfig = builtins.readFile ./tmux/tmux.conf;
-
-    extraPackages = [ script ];
   };
+
+  home.activation.setupTmuxPlugins = pkgs.lib.hm.dag.entryAfter [ "writeBoundary" ] script;
 }
