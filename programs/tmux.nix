@@ -1,12 +1,23 @@
-{ pkgs }:
+{ pkgs, ... }:
+
+let
+  script = pkgs.writeShellScriptBin "setup-tmux-plugins" ''
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    ~/.tmux/plugins/tpm/bin/install_plugins
+  '';
+in
 {
-  enable = true;
-  prefix = "C-s";
-  terminal = "screen-256color";
+  programs.tmux = {
+    enable = true;
+    prefix = "C-a";
+    terminal = "screen-256color";
 
-  plugins = with pkgs.tmuxPlugins; [
-    # vim-tmux-navigator
-  ];
+    plugins = with pkgs.tmuxPlugins; [
+      # vim-tmux-navigator
+    ];
 
-  extraConfig = builtins.readFile ./tmux/tmux.conf;
+    extraConfig = builtins.readFile ./tmux/tmux.conf;
+
+    extraPackages = [ script ];
+  };
 }
