@@ -9,7 +9,6 @@ let
   '';
 in
 {
-  programs.tmux = {
     enable = true;
     prefix = "C-a";
     terminal = "screen-256color";
@@ -19,7 +18,4 @@ in
     ];
 
     extraConfig = builtins.readFile ./tmux/tmux.conf;
-  };
-
-  home.activation.setupTmuxPlugins = pkgs.lib.hm.dag.entryAfter [ "writeBoundary" ] script;
 }
