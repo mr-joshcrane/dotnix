@@ -8,7 +8,7 @@
       tmuxPlugins.sensible
       tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.resurrect
-      #tmuxPlugins.dracula
+      tmuxPlugins.power-theme
     ];
 
     extraConfig = builtins.readFile ./tmux/tmux.conf;
