@@ -27,6 +27,8 @@
     go
     delve
     gopls
+    treesitter
+    lazygit
 
     # Required for mason lsp
     nodejs_20
