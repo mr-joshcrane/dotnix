@@ -22,6 +22,6 @@ vim.api.nvim_set_keymap('n', '<leader>fc', ':Telescope lsp_code_actions<CR>', {n
 vim.api.nvim_set_keymap('n', '<leader>ft', ':Telescope treesitter<CR>', {noremap = true, silent = true})
 
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
