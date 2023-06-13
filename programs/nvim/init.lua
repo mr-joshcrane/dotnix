@@ -20,6 +20,10 @@ vim.api.nvim_set_keymap('n', '<leader>fd', ':Telescope lsp_definitions<CR>', {no
 vim.api.nvim_set_keymap('n', '<leader>fi', ':Telescope lsp_implementations<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fc', ':Telescope lsp_code_actions<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>ft', ':Telescope treesitter<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fp', ':Telescope projects<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fo', ':Telescope oldfiles<CR>', {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', {noremap = true, silent = true})
 
 
 vim.opt.tabstop = 2
