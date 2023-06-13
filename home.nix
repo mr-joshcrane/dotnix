@@ -12,11 +12,6 @@
     gh
     gnugrep
     flyctl
-    kubectl
-    azure-cli
-    awscli2
-    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
-    terraform
     ripgrep
     fd
     jq
@@ -24,8 +19,6 @@
     nerdfonts
     direnv
     colima
-    docker
-    docker-compose
     yubikey-manager
 
     # go
