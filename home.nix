@@ -20,7 +20,9 @@
     direnv
     colima
     yubikey-manager
-
+    unzip
+    wget
+    gcc
     # go
     go
     delve
