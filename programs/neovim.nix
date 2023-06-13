@@ -4,7 +4,7 @@
   plugins = with pkgs.vimPlugins; [
     plenary-nvim
     telescope-fzf-native-nvim
-    lazygit
+    lazygit-nvim
     comment-nvim
     vim-tmux-navigator
     luasnip
