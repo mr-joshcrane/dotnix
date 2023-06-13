@@ -7,6 +7,7 @@
     lazygit-nvim
     comment-nvim
     vim-tmux-navigator
+    copilot-vim
     luasnip
     cmp_luasnip
     cmp-git
