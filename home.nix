@@ -10,6 +10,7 @@
     zsh
     git
     gh
+    golangci-lint
     gnugrep
     flyctl
     ripgrep
