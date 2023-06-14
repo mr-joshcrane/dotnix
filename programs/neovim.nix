@@ -8,6 +8,7 @@
     comment-nvim
     vim-tmux-navigator
     copilot-vim
+    vim-go
     luasnip
     cmp_luasnip
     cmp-git
