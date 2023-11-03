@@ -6,7 +6,7 @@
   home.packages = with pkgs; [
     neovim
     #tmux
-    #oh-my-zsh
+    oh-my-zsh
     zsh
     git
     gh
