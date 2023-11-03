@@ -19,11 +19,7 @@
     trouble-nvim
     mason-lspconfig-nvim
     null-ls-nvim
-    {
-      plugin = nvim-web-devicons;
-      type = "lua";
-      config = builtins.readFile ./nvim/web-devicons.lua;
-    }
+    catppuccin-nvim
     {
       plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
@@ -45,11 +41,6 @@
       config = builtins.readFile ./nvim/lightspeed.lua;
     }
     {
-      plugin = project-nvim;
-      type = "lua";
-      config = builtins.readFile ./nvim/project_nvim.lua;
-    }
-    {
       plugin = lualine-nvim;
       type = "lua";
       config = builtins.readFile ./nvim/lualine.lua;
@@ -58,11 +49,6 @@
       plugin = leap-nvim;
       type = "lua";
       config = builtins.readFile ./nvim/leap.lua;
-    }
-    {
-      plugin = telescope-nvim;
-      type = "lua";
-      config = builtins.readFile ./nvim/telescope.lua;
     }
     {
       plugin = nvim-tree-lua;
@@ -93,12 +79,6 @@
       plugin = nvim-dap;
       type = "lua";
       config = builtins.readFile ./nvim/dap.lua;
-    }
-    catppuccin-nvim
-    {
-      plugin = catppuccin-nvim;
-      type = "lua";
-      config = builtins.readFile ./nvim/catppuccin.lua;
     }
     git-worktree-nvim
   ];

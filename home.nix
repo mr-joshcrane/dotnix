@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
-  home.username = "jcrane";
-  home.homeDirectory = "/home/jcrane";
+  home.username = "joshua";
+  home.homeDirectory = "/home/joshua";
   home.stateVersion = "22.05";
   home.packages = with pkgs; [
-    tmux
-    alacritty
-    oh-my-zsh
+    neovim
+    #tmux
+    #oh-my-zsh
     zsh
     git
     gh
@@ -39,17 +39,17 @@
 
   programs.home-manager.enable = true;
 
-   programs.direnv = {
-     enable = true;
-     nix-direnv.enable = true;
-   };
-   programs.tmux = import ./programs/tmux.nix {
-     inherit pkgs;
-   };
+   #programs.direnv = {
+   #  enable = true;
+   #  nix-direnv.enable = true;
+   #};
+   #programs.tmux = import ./programs/tmux.nix {
+   #  inherit pkgs;
+   #};
 
-   programs.alacritty = import ./programs/alacritty.nix {
-     inherit pkgs;
-   };
+   #programs.alacritty = import ./programs/alacritty.nix {
+   #  inherit pkgs;
+   #};
 
    programs.zsh = import ./programs/zsh.nix {
      inherit pkgs;
