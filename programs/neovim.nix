@@ -50,16 +50,6 @@
       config = builtins.readFile ./nvim/project_nvim.lua;
     }
     {
-      plugin = alpha-nvim;
-      type = "lua";
-      config = builtins.readFile ./nvim/alpha.lua;
-    }
-    {
-      plugin = nightfox-nvim;
-      type = "lua";
-      config = builtins.readFile ./nvim/nightfox.lua;
-    }
-    {
       plugin = lualine-nvim;
       type = "lua";
       config = builtins.readFile ./nvim/lualine.lua;
@@ -104,8 +94,13 @@
       type = "lua";
       config = builtins.readFile ./nvim/dap.lua;
     }
+    catppuccin-nvim
+    {
+      plugin = catppuccin-nvim;
+      type = "lua";
+      config = builtins.readFile ./nvim/catppuccin.lua;
+    }
     git-worktree-nvim
   ];
-
   extraLuaConfig = builtins.readFile ./nvim/init.lua;
 }

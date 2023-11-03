@@ -9,7 +9,8 @@
       tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.resurrect
       tmuxPlugins.power-theme
-    ];
+      tmuxPlugins.catppuccin
+];
 
     extraConfig = builtins.readFile ./tmux/tmux.conf;
 }

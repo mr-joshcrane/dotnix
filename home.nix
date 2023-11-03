@@ -24,7 +24,6 @@
     unzip
     wget
     gcc
-    # go
     go
     delve
     gopls
