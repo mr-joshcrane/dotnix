@@ -5,9 +5,9 @@
   home.stateVersion = "22.05";
   home.packages = with pkgs; [
     neovim
-    #tmux
-    oh-my-zsh
+    tmux
     zsh
+    starship
     git
     gh
     golangci-lint
@@ -43,9 +43,12 @@
    #  enable = true;
    #  nix-direnv.enable = true;
    #};
-   #programs.tmux = import ./programs/tmux.nix {
-   #  inherit pkgs;
-   #};
+   programs.starship = import ./programs/starship.nix {
+    inherit pkgs;
+   };
+   programs.tmux = import ./programs/tmux.nix {
+     inherit pkgs;
+   };
 
    #programs.alacritty = import ./programs/alacritty.nix {
    #  inherit pkgs;

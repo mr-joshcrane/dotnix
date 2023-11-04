@@ -8,7 +8,6 @@
       tmuxPlugins.sensible
       tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.resurrect
-      tmuxPlugins.power-theme
       tmuxPlugins.catppuccin
 ];
 
