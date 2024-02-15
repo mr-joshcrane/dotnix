@@ -10,7 +10,7 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     lete
-      system = "aarch64";
+      system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations.jcrane = home-manager.lib.homeManagerConfiguration {
