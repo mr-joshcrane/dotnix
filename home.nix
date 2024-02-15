@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  home.username = "joshua";
-  home.homeDirectory = "/home/joshua";
+  home.username = "jcrane";
+  home.homeDirectory = "/home/jcrane";
   home.stateVersion = "22.05";
   home.packages = with pkgs; [
     tmux
