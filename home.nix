@@ -11,7 +11,7 @@
     gh
     golangci-lint
     gnugrep
-    flyctlapiu
+    flyctl
     ripgrep
     fd
     jq
