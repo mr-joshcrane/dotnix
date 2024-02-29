@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  home.username = "jcrane";
-  home.homeDirectory = "/home/jcrane";
+  home.username = "joshua";
+  home.homeDirectory = "/home/joshua";
   home.stateVersion = "22.05";
   home.packages = with pkgs; [
     tmux
@@ -11,7 +11,7 @@
     gh
     golangci-lint
     gnugrep
-    flyctl
+    flyctlapiu
     ripgrep
     fd
     jq
