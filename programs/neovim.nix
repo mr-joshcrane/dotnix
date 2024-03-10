@@ -20,11 +20,7 @@
     mason-lspconfig-nvim
     null-ls-nvim
     catppuccin-nvim
-    {
-      plugin = vimplugin-vim-go;
-      type = "lua";
-      config = builtins.readFile ./nvim/vim-go.lua;
-    }
+
     {
       plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
