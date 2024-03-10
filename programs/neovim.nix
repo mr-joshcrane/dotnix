@@ -21,7 +21,7 @@
     null-ls-nvim
     catppuccin-nvim
     {
-      plugin = vim-go;
+      plugin = vimplugin-vim-go;
       type = "lua";
       config = builtins.readFile ./nvim/vim-go.lua;
     }
