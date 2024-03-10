@@ -53,13 +53,3 @@ lspconfig.golangci_lint_ls.setup {
   },
 }
 
-require'lspconfig'.tsserver.setup{}
-
-
-vim.filetype.add({
-  extension = {
-    astro = "astro"
-  }
-})
-
-require'lspconfig'.astro.setup{}
