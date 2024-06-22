@@ -20,6 +20,7 @@
     mason-lspconfig-nvim
     null-ls-nvim
     catppuccin-nvim
+    nvim-web-devicons
 
     {
       plugin = nvim-treesitter.withAllGrammars;
