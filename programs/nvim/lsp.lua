@@ -53,6 +53,14 @@ lspconfig.golangci_lint_ls.setup {
   },
 }
 
+require("rust-tools").setup({
+  server = {
+    on_attach = function(client) 
+      client.server_capabilities.semanticTokensProvider = nil 
+    end,
+  }
+})
+
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
