@@ -53,3 +53,20 @@ lspconfig.golangci_lint_ls.setup {
   },
 }
 
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      procMacro = {
+        enable = true,
+      },
+      checkOnSave = {
+        command = "clippy",  -- Use `clippy` for linting
+      },
+    },
+  },
+}

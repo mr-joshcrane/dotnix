@@ -12,8 +12,6 @@
     golangci-lint
     gnugrep
     flyctl
-    ripgrep
-    fd
     jq
     yq-go
     nerdfonts
@@ -27,6 +25,11 @@
     delve
     gopls
     lazygit
+    rustc
+    cargo
+    rust-analyzer
+    ripgrep
+    rustPackages.clippy
 
     # Required for mason lsp
     nodejs_20
