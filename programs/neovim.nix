@@ -23,11 +23,6 @@
     nvim-web-devicons
 
     {
-      plugin = rust-tools;
-      type = "lua";
-      config = builtins.readFile ./nvim/rust-tools.lua;
-    }
-    {
       plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
       config = builtins.readFile ./nvim/treesitter.lua;
