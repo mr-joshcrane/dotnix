@@ -21,6 +21,7 @@
     null-ls-nvim
     catppuccin-nvim
     nvim-web-devicons
+    rust-tools-nvim
 
     {
       plugin = nvim-treesitter.withAllGrammars;
