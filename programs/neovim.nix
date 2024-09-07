@@ -23,7 +23,7 @@
     nvim-web-devicons
 
     {
-      plugin = rust-tools.nvim;
+      plugin = rust-tools;
       type = "lua";
       config = builtins.readFile ./nvim/rust-tools.lua;
     }
