@@ -60,7 +60,10 @@ require("rust-tools").setup({
     end,
   }
 })
-vim.api.nvim_set_hl(0, '@lsp.type.comment.rust', {})
+
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+        vim.api.nvim_set_hl(0, group, {})
+end
 
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
