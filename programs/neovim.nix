@@ -22,8 +22,7 @@
     catppuccin-nvim
     nvim-web-devicons
     rust-tools-nvim
-    my-elixir-tools
-    elixir-extras
+    elixir-tools-nvim
 
     {
       plugin = nvim-treesitter;
