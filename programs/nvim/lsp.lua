@@ -83,7 +83,17 @@ lspconfig.rust_analyzer.setup {
   },
 }
 
-require("elixir-ls").setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+require("elixir").setup({
+  nextls = {
+    enable = false,
+    on_attach = call_all(common_on_attach),
+    capabilities = capabilities,
+  },
+  elixirls = {
+    enable = true,
+    tag = "v0.15.1",
+    on_attach=call_all(common_on_attach, elixir_attach),
+    capabilites = capabilities,
+  }
 })
+

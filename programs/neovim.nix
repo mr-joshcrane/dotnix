@@ -22,7 +22,9 @@
     catppuccin-nvim
     nvim-web-devicons
     rust-tools-nvim
-    elixir-ls-nvim
+    my-elixir-tools
+    elixir-extras
+
     {
       plugin = nvim-treesitter;
       type = "lua";
