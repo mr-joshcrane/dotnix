@@ -30,7 +30,8 @@
     rust-analyzer
     ripgrep
     rustPackages.clippy
-
+    elixir_1_16
+    erlang
     # Required for mason lsp
     nodejs_20
   ];
