@@ -22,7 +22,12 @@
     catppuccin-nvim
     nvim-web-devicons
     rust-tools-nvim
-
+    elixir-ls-nvim
+    {
+      plugin = nvim-treesitter;
+      type = "lua";
+      config = builtins.readFile ./nvim/treesitter.lua;
+    }
     {
       plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
