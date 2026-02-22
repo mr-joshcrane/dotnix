@@ -8,15 +8,20 @@
 			
 		};
 		noctalia = {
-                  url = "github:noctalia-dev/noctalia-shell";
-                  inputs.nixpkgs.follows = "nixpkgs";
-                };
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+		silent-sddm = {
+			url = "github:uiriansan/SilentSDDM";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
-	outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+	outputs = inputs@{ self, nixpkgs, home-manager, silent-sddm, ... }: {
 		nixosConfigurations.nixcariot = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
 				./configuration.nix
+				silent-sddm.nixosModules.default
 				home-manager.nixosModules.home-manager
 				{
 					home-manager = {
@@ -28,6 +33,7 @@
 					};
 				}
 			];
+			specialArgs = { inherit inputs; };
 		};
 	};
 

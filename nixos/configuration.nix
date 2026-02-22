@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -85,10 +85,17 @@
     '';
   };
 
-  services.displayManager.defaultSession = "niri";
-  services.displayManager.sddm.enable = true;
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "niri";
+  };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.silentSDDM = {
+    enable = true;
+  };
+
+  security.pam.services.swaylock = {};
+
   users.users.joshc = {
     isNormalUser = true;
     description = "Joshua Crane";
@@ -115,7 +122,7 @@
      swaybg
      noctalia-shell
      xwayland-satellite
-  ];
+    ];
 
   programs.steam = {
     enable = true;
