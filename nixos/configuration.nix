@@ -104,7 +104,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     neovim
      wget
      git
      alacritty
@@ -115,45 +115,7 @@
      swaybg
      noctalia-shell
      xwayland-satellite
-     gh
-     ripgrep
-     fd
-     unzip
-     nodejs_24
-     gnugrep
-     jq
-     wl-clipboard
-     gcc      
-     openssl
-     openssl.dev
-     pkg-config
-     signal-desktop
-
-     # --- Cloud / Ops / Security ---
-     flyctl
-     yubikey-manager
-     
-     # --- Go toolchain ---
-     go
-     gopls
-     delve
-     golangci-lint
-
-     # --- Rust toolchain ---
-     rustc
-     cargo
-     cargo-generate
-     rust-analyzer
-     rustPackages.clippy
-
-     # --- BEAM (Elixir/Erlang) ---
-     elixir_1_16
-     erlang
- 
-     # --- NixOS tooling ---
-     nil
-     lua-language-server
-];
+  ];
 
   programs.steam = {
     enable = true;
