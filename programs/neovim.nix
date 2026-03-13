@@ -1,4 +1,4 @@
-{ pkgs }:
+{ config, pkgs, ... }:
 {
   enable = true;
   plugins = with pkgs.vimPlugins; [
@@ -22,15 +22,8 @@
     catppuccin-nvim
     nvim-web-devicons
     rust-tools-nvim
-    elixir-tools-nvim
-
     {
       plugin = nvim-treesitter;
-      type = "lua";
-      config = builtins.readFile ./nvim/treesitter.lua;
-    }
-    {
-      plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
       config = builtins.readFile ./nvim/treesitter.lua;
     }
@@ -79,7 +72,6 @@
       type = "lua";
       config = builtins.readFile ./nvim/cmp.lua;
     }
-    neodev-nvim
     nvim-dap-go
     nvim-dap-ui
     nvim-dap-virtual-text

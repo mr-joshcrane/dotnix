@@ -1,10 +1,7 @@
-local ok, ts = pcall(require, "nvim-treesitter.configs")
-if ok then
-  ts.setup {
-    indent = { enable = true },
-    highlight = { enable = true, additional_vim_regex_highlighting = true },
-  }
-else
-  vim.notify("nvim-treesitter not loaded yet")
-end
-
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    if pcall(vim.treesitter.start, args.buf) then
+      vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  end,
+})

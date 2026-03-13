@@ -1,7 +1,3 @@
-require("neodev").setup({
-    library = { plugins = { "nvim-dap-ui" }, types = true },
-})
-
 vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
 vim.keymap.set("n", "<F8>", ":lua require'dap'.step_over()<CR>")
 vim.keymap.set("n", "<F9>", ":lua require'dap'.step_into()<CR>")

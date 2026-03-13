@@ -1,7 +1,8 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs.silent-sddm.url = "github:notuskill/silent-sddm";
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, silent-sddm }:
   let
     system = "x86_64-linux"; # change if needed
     pkgs = import nixpkgs {

@@ -23,7 +23,7 @@
     openssl
     pkg-config
     signal-desktop
-
+    discord
     flyctl
     yubikey-manager
 
@@ -32,11 +32,7 @@
     delve
     golangci-lint
 
-    rustc
-    cargo
-    cargo-generate
-    rust-analyzer
-    clippy
+    rustup
 
     elixir_1_16
     erlang
@@ -44,12 +40,21 @@
     nil
     lua-language-server
     opencode
+    spotify
   ];
 
   home.sessionPath = [
-    "$HOME/.cargo/bin"
     "$HOME/go/bin"
+    "$HOME/.cargo/bin"
   ];
+
+  home.sessionVariables = {
+    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      pkgs.libxkbcommon
+      pkgs.vulkan-loader
+    ];
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
@@ -86,4 +91,6 @@
     enable = true;
     systemd.enable = true;	
   };
+
+  home.file.".config/niri/config.kdl".source = ./niri-config.kdl;
 }
