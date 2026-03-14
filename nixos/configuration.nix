@@ -11,6 +11,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
+  # Disable suspend/hibernate — NVIDIA RTX 5080 open kernel module doesn't
+  # recover reliably from sleep (Xid 13 shader errors on resume).
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+
   networking.hostName = "nixcariot"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -49,8 +56,8 @@
     modesetting.enable = true;
 
     # Nvidia power management. Saves and restores VRAM contents across suspend/resume
-    # cycles, preventing graphical corruption or GPU failure on wake.
-    powerManagement.enable = true;
+    # cycles. Disabled since suspend is disabled system-wide.
+    powerManagement.enable = false;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).

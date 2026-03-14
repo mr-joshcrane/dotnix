@@ -1,4 +1,16 @@
 { config, pkgs, ... }:
+let
+  opencode-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "opencode-nvim";
+    version = "0.5.2";
+    src = pkgs.fetchFromGitHub {
+      owner = "nickjvandyke";
+      repo = "opencode.nvim";
+      rev = "v0.5.2";
+      sha256 = "0mxxwygh12wscggxvjzgaandasz6xgrny1m9dz0mnsjzlk9swy9i";
+    };
+  };
+in
 {
   programs.neovim = {
   enable = true;
@@ -83,6 +95,11 @@
       config = builtins.readFile ./nvim/dap.lua;
     }
     git-worktree-nvim
+    {
+      plugin = opencode-nvim;
+      type = "lua";
+      config = builtins.readFile ./nvim/opencode.lua;
+    }
   ];
    initLua = builtins.readFile ./nvim/init.lua;
  };
