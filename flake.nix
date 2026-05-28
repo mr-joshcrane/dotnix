@@ -1,6 +1,6 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  inputs.silent-sddm.url = "github:notuskill/silent-sddm";
+  inputs.silent-sddm.url = "github:uiriansan/SilentSDDM";
 
   outputs = { self, nixpkgs, silent-sddm }:
   let

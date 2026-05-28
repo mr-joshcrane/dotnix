@@ -33,14 +33,26 @@
     golangci-lint
 
     rustup
+    jujutsu
 
-    elixir_1_16
+    elixir
     erlang
 
     nil
     lua-language-server
     opencode
+    lsof
+    obs-cmd
+    showmethekey
+    ffmpeg-full
+    xdotool
     spotify
+    foliate
+
+    # Gaming
+    lutris
+    wineWowPackages.stable
+    winetricks
   ];
 
   home.sessionPath = [
@@ -59,6 +71,7 @@
     enable = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild --flake ~/dotnix/nixos#nixcariot switch";
+      obs = "OBS_USE_EGL=1 LIBVA_DRIVER_NAME=nvidia LD_LIBRARY_PATH=/run/opengl-driver/lib:\$LD_LIBRARY_PATH obs";
     };
   };
     

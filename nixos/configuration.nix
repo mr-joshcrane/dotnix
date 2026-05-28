@@ -11,6 +11,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
+  # v4l2loopback virtual camera for SCHNAIL capture
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=10 card_label="SCHNAIL_Capture" exclusive_caps=1
+  '';
+
   # Disable suspend/hibernate — NVIDIA RTX 5080 open kernel module doesn't
   # recover reliably from sleep (Xid 13 shader errors on resume).
   systemd.targets.sleep.enable = false;
@@ -23,6 +30,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Tailscale VPN
+  services.tailscale.enable = true;
 
   # Set your time zone.
   time.timeZone = "Australia/Perth";
@@ -104,8 +114,16 @@
   users.users.joshc = {
     isNormalUser = true;
     description = "Joshua Crane";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" "docker" "input" ];
     packages = with pkgs; [];
+  };
+
+  virtualisation.virtualbox.host.enable = true;
+
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;  # NVIDIA Container Toolkit (nvidia-docker)
   };
 
   # Allow unfree packages
@@ -133,6 +151,13 @@
      wasm-bindgen-cli
      libxkbcommon
      pkg-config
+     (wrapOBS {
+       plugins = with obs-studio-plugins; [
+         wlrobs
+         obs-pipewire-audio-capture
+         input-overlay
+       ];
+     })
     ];
 
  
